@@ -14,3 +14,14 @@ def index(request):
             'posts' : posts,
         }
     )
+
+def single_post_page(requst, pk):
+    post = Post.objects.get(pk=pk)
+
+    return render(
+        requst,
+        'blog/single_post_page.html',
+        {
+            'post':post,
+        }
+    )
